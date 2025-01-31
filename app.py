@@ -8,10 +8,8 @@ from nltk.tokenize import word_tokenize
 nltk.download('punkt')
 nltk.download('stopwords')
 
-
 # Load a pre-trained Hugging Face model
 chatbot = pipeline("text-generation", model="distilgpt2")
-
 
 # Define healthcare-specific response logic (or use a model to generate responses)
 def healthcare_chatbot(user_input):
@@ -29,15 +27,47 @@ def healthcare_chatbot(user_input):
         # If set to 3, the model generates three different possible responses based on the input.
         return response[0]['generated_text']
 
-
 # Streamlit web app interface
 def main():
     # Set up the web app title and input area
+    st.markdown("""
+        <style>
+            body {
+                background-image: url('https://example.com/robot-doctor-background.jpg');  /* Replace with the path to your image */
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                color: white;
+                font-family: 'Arial', sans-serif;
+            }
+            .stButton>button {
+                background-color: #4CAF50;
+                color: white;
+                font-size: 16px;
+                border-radius: 5px;
+                padding: 10px 20px;
+            }
+            .stTextInput input {
+                background-color: rgba(0, 0, 0, 0.6);
+                color: white;
+                border-radius: 5px;
+                padding: 10px;
+            }
+            .stTextInput label {
+                color: white;
+            }
+            .stWrite {
+                color: white;
+            }
+        </style>
+        """, unsafe_allow_html=True)
+
+    # Display the web app title
     st.title("Healthcare Assistant Chatbot")
-    
+
     # Display a simple text input for user queries
     user_input = st.text_input("How can I assist you today?", "")
-    
+
     # Display chatbot response
     if st.button("Submit"):
         if user_input:
