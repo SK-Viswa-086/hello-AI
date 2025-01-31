@@ -33,7 +33,7 @@ def main():
     st.markdown("""
         <style>
             body {
-                background-image: url('https://example.com/robot-doctor-background.jpg');  /* Replace with the path to your image */
+                background-image: url('https://static.vecteezy.com/system/resources/thumbnails/034/637/931/small_2x/a-futuristic-robotic-doctor-in-a-doctor-s-coat-with-a-stethoscope-on-a-blue-background-concept-of-advanced-medical-technology-ai-generative-photo.jpg');  /* Replace with the path to your image */
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
